@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Drawing Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 Collaborative Drawing Canvas</h1>
+            <div class="user-info">
+                <span id="userId">Connecting...</span>
+                <div class="user-indicator" id="userIndicator"></div>
+            </div>
+        </header>
+
+        <div class="toolbar">
+            <div class="tool-group">
+                <label>Tool:</label>
+                <button class="tool-btn active" data-tool="brush">
+                    <span>🖌️</span> Brush
+                </button>
+                <button class="tool-btn" data-tool="eraser">
+                    <span>🧹</span> Eraser
+                </button>
+            </div>
+
+            <div class="tool-group">
+                <label for="colorPicker">Color:</label>
+                <input type="color" id="colorPicker" value="#000000">
+            </div>
+
+            <div class="tool-group">
+                <label for="lineWidth">Width:</label>
+                <input type="range" id="lineWidth" min="1" max="50" value="5">
+                <span id="lineWidthValue">5</span>px
+            </div>
+
+            <div class="tool-group">
+                <button id="undoBtn" class="action-btn" disabled>
+                    <span>↶</span> Undo
+                </button>
+                <button id="redoBtn" class="action-btn" disabled>
+                    <span>↷</span> Redo
+                </button>
+            </div>
+
+            <div class="tool-group">
+                <button id="clearBtn" class="action-btn danger">
+                    <span>🗑️</span> Clear All
+                </button>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+            <div id="cursors"></div>
+        </div>
+
+        <aside class="users-panel">
+            <h3>👥 Online Users (<span id="userCount">0</span>)</h3>
+            <div id="usersList"></div>
+        </aside>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
