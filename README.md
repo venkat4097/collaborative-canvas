@@ -281,7 +281,7 @@ railway up
 
 ## License
 
-MIT
+ISC
 
 ---
 
